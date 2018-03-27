@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?php echo $title?> | Mississauga Dental Clinic (MDC)</title>
+    <title><?php echo $title?> | Dental Clinic </title>
     <link rel="icon" href="<?php echo base_url();?>assets/img/gayatinlogo.png"/>
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/customized.css" />
@@ -49,14 +49,10 @@
                           <span class="icon-bar"></span>
                         </button>
                         <?php if(!$this->session->userdata('username')){?>
-                          <a class="navbar-brand" href="<?php echo base_url();?>">
-                            <img src="<?php echo base_url();?>/assets/img/gayatinlogo.png" alt="Tooth Logo">Dental Clinic
-                          </a>
+                          
                         <?php } ?>
                         <?php if($this->session->userdata('username')){?>
-                          <a class="navbar-brand" href="#">
-                            <img src="<?php echo base_url();?>/assets/img/gayatinlogo.png" alt="Tooth Logo">Dental Clinic
-                          </a>
+                          
                         <?php } ?>
                       </div>
                 

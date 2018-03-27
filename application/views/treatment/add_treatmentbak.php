@@ -36,14 +36,7 @@
                                       <option value="Quadrant">Quadrant</option>
                         </select>
                         <button id="atf" style="margin-right:5px" type="button" class="btn btn-info">Add treatment</button>
-                        <!-- <button id="atf" type="button" class="btn btn-info">Add unit treatment</button> -->
-                        <!-- <button id="atf" type="button" class="btn btn-info">Add post treatment</button>
-                        <button id="atf" type="button" class="btn btn-info">Add canal treatment</button>
-                        <button id="atf" type="button" class="btn btn-info">Add arch treatment</button> -->
-                        <!-- <button id="atf" type="button" class="btn btn-info">Add appliance treatment</button> -->
-                        <!-- <button id="atf" type="button" class="btn btn-info">Add quadrant treatment</button> -->
-
-                       <!--  <button id="remove" style="margin-right:5px" type="button" class="btn btn-warning">Remove</button> -->
+                        -->
                       </div>
 
                       <table id="mytable" style="margin-top: 10px" class="table" cellspacing="0" width="100%">
@@ -66,7 +59,7 @@
                       <hr>
                       <div class="col-lg-5 col-lg-offset-2 columns">
 
-                        <label for="tot-amt-of-treatments">Total Amount for Treatment(s) Performed (PHP)</label>
+                        <label for="tot-amt-of-treatments">Total Fees for Treatment(s) Performed (PHP)</label>
                         <span id="tot-amt-of-treatments" class="form-control" style="width: 60%;">0</span>
                        <!--  <button id="calculate" class="btn btn-info" style="margin-top:5px;" type="button">Calculate Total Amount</button> -->
                         <input id="total" name="total_amount" class="form-control" type="hidden" value="0" required/>

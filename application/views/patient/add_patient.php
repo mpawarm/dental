@@ -106,8 +106,8 @@
                                 <label class="form-elem" for="profile-oh">Oral Hygiene Practices (choose)</label>  
                                 <select id="profile-oh" class="form-control" name="orhy" required>
                                   <option value="" disabled default selected style="display:none;"></option>
-                                  <option value="Good">Inferior</option>
-                                  <option value="Poor">Superior</option>
+                                  <option value="Good">Good</option>
+                                  <option value="Poor">Bad</option>
                                 </select>
                               </div>
 

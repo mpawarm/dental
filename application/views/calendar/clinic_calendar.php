@@ -209,20 +209,20 @@
 	var data;
 var date=document.getElement	
 	for(i=0; i<day.length && day[i].innerText!=1;i++)
-		$(day[i]).css("background-color","grey");
+		$(day[i]).css("background-color","coral");
 			for(;x<content.length;x++,i++){
 			data=content[x].innerText;
 			data=data.split("/");
 				if(data[8]=="Passed" || data[8]=="Sunday")
-			$(day[i]).css("background-color","grey");
+			$(day[i]).css("background-color","aqua");
 			else if(data[8]=="Closed")
-			$(day[i]).css("background-color","#f0ad4e");	
+			$(day[i]).css("background-color","coral");	
 			else
-			$(day[i]).css("background-color","white");
+			$(day[i]).css("background-color","magenta");
 			}
 		
 			for(;i<day.length;i++)
-					$(day[i]).css("background-color","grey");
+					$(day[i]).css("background-color","aqua");
 				
   	document.getElementsByClassName('btn-opensched')[0].onclick = function(){
   		$('#modal-opensched').modal('toggle');
@@ -259,7 +259,7 @@ var date=document.getElement
 		$('.day').mouseleave(function(){
 			if(data[8]){
 		if(data[8]=="Active"){
-		$(this).css("background-color","white");
+		$(this).css("background-color","magenta");
 			$("#box").hide();
 		}
 			}

@@ -78,7 +78,7 @@
                               <div class="col-xs-5 columns">
                                 <label for="edit-ct">Category</label>
                                     <select id="edit-ct" class="form-control" name="edit-ct" required >
-                                      <option value="General">General</option>          
+                                      <option value="General">General</option>      
 
                                       <option value="Orthodontic Dentistry">Orthodontic Dentistry</option>
                                       

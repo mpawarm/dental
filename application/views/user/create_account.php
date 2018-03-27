@@ -22,8 +22,9 @@
 									<input id="lname" class="form-control" name="lname" type="text" required/>
 									<label class="form-elem" for="type">Account Type</label>
 		                                <select id="type" class="form-control" name="type" style="width:50%" required >
-		                                  <option value="1">Dental Staff</option>
-		                                  <option value="0">Dentist</option>
+		                                  <option value="1">Clinic Staff</option>
+		                                  <option value="0">Dentists</option>
+		                                  <option value="0">Patients</option>
 		                                </select>  
 								</div>
 							</div>			
@@ -31,7 +32,7 @@
 								<div class="col-xs-12 columns">
 									<span class="alert-success" style="margin: 10px 0; padding:5px; display:block">
 										<b>NOTE</b>: Default password is <b><i>password</i></b>. 
-										change your password after you logged-in to your account.
+										Reset your password after log-in.
 									</span>
 								</div>
 							</div>							

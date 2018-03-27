@@ -5,14 +5,14 @@
 			<legend>Treatment record for <?php echo date('F j, Y',strtotime($record->date));?></legend>
 
 			<div class="col-xs-6 col-xs-offset-1 columns">
-				<h5><label>Dentist in Charge</label>: Dr. <?php echo $record->dentistincharge;?></h5>
-				<h5><label>Chief Complaint</label>: <?php echo $record->chiefcomplaint;?></h5>
+				<h5><label>Dentist Appointed</label>: Dr. <?php echo $record->dentistincharge;?></h5>
+				<h5><label>Dental Complaint</label>: <?php echo $record->chiefcomplaint;?></h5>
 				<h5><label>Other Findings</label>: <?php echo $record->otherfindings;?></h5>
 			</div>
 			<div class="col-xs-5 columns">
-				<h5><label>Total Amount to Pay</label>: <?php echo number_format($transaction->totalamount);?></h5>
+				<h5><label>Total Amount Due</label>: <?php echo number_format($transaction->totalamount);?></h5>
 				<h5><label>Payment Received</label>: <?php echo number_format($transaction->amountpaid);?></h5>
-				<h5><label>Remaining Balance</label>: <?php echo number_format($transaction->balance);?></h5>
+				<h5><label>Balance Remaining</label>: <?php echo number_format($transaction->balance);?></h5>
 			</div>
 			<hr>
 
