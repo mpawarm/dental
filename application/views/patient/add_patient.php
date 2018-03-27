@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-xs-10 col-xs-offset-1 col-lg-10 col-lg-offset-1 columns">
       <div class="element-container">
-              <legend>Create New Profile</legend>
+              <legend>Create New User Profile</legend>
               <center><span style="color:red;"><?php echo $message;?></span></center>
               <form id="add_patient" method="post" action="<?php echo base_url();?>patient/create_patient" role="form">
                   
@@ -10,11 +10,11 @@
                       <div class="col-xs-10 col-xs-offset-1 columns">
                         <!-- START OF PERSONAL INFORMATION -->
                         <div class="col-xs-12 columns">
-                          <span><h4 class="group-title">Personal Information</h4></span>
+                          <span><h4 class="group-title">Patient Personal Information</h4></span>
                           <!-- START OF LEFT COLUMN OF PERSONAL INFORMATION -->
                           <div class="col-xs-6 col-lg-6 columns">  
                             <label for="username" class="form-elem">Username *</label>
-                            <input id="username" class="form-control" placeholder="This serves as your identifier" name="uname" type="text" required />
+                            <input id="username" class="form-control" placeholder="Enter login name" name="uname" type="text" required />
 
                             <label for="firstname" class="form-elem">First Name *</label>
                             <input id="firstname" class="form-control" name="fname" type="text" required />
@@ -37,10 +37,10 @@
                           <!-- START OF RIGHT COLUMN OF PERSONAL INFORMATION -->
                           <div class="col-xs-6 col-lg-6 columns">  
                             <label class="form-elem" for="profile-tel">Telephone Number</label>
-                            <input placeholder="format: 561-7002" id="profile-tel" class="form-control" name="htno" pattern="[0-9]{3}[-][0-9]{4}" type="text" />                               
+                            <input placeholder="format: 000-0000" id="profile-tel" class="form-control" name="htno" pattern="[0-9]{3}[-][0-9]{4}" type="text" />                               
                           
                             <label class="form-elem" for="profile-mobile">Mobile Number *</label>
-                            <input placeholder="format: 09059217529" id="profile-mobile" class="form-control" name="mno" type="text" pattern="[0][9][0-9]{9}" required/>
+                            <input placeholder="format: 000-0000000" id="profile-mobile" class="form-control" name="mno" type="text" pattern="[0][9][0-9]{9}" required/>
 
                             <label class="form-elem" for="profile-email">Email Address *</label>
                             <input id="profile-email" class="form-control" name="email" type="email" required />                          
@@ -73,18 +73,7 @@
                         </div>
                         <!-- END OF PERSONAL INFORMATION -->  
 
-                        <!-- START OF WORK INFORMATION -->
-                        <div class="col-xs-12 columns">
-                          <span style="display:block; margin-top:22px"><h4 class="group-title">Work Information</h4></span>                         
-                          <label class="form-elem" for="profile-oaddress">Office Address</label>
-                          <input id="profile-oaddress"class="form-control" name="oadd" type="text" />
-                                              
-                          <div class="col-xs-6 col-lg-6 columns">
-                            <label class="form-elem" for="profile-otel">Office Telephone Number</label>
-                            <input placeholder="format: 561-7003" id="profile-otel" class="form-control" name="otno" pattern="[0-9]{3}[-][0-9]{4}" type="text" />
-                          </div>
-                        </div>
-                        <!-- END OF WORK INFORMATION -->        
+                           
 
                         <!-- START OF DENTAL INFORMATION -->  
                         <div class="col-xs-12 columns">
@@ -92,39 +81,38 @@
                             
                             <div class="col-xs-6 col-lg-6 columns">  
                               <div class="col-xs-12 col-lg-6 columns">
-                                <label class="form-elem" for="profile-occ">OCCLUSION *</label>
+                                <label class="form-elem" for="profile-occ">Dental Occlusion(choose)</label>
                                 <select id="profile-occ" class="form-control" name="occ" required>
                                   <option value="" disabled default selected style="display:none;"></option>
                                   <option value="Class I">Class I</option>
-                                  <option value="Class II (Div.1)">Class II (Div.1)</option>
-                                  <option value="Class II (Div.2)">Class II (Div.2)</option>
+                                  <option value="Class II (Div.1)">Class II </option>
                                   <option value="Class III">Class III</option>
                                   <option value="None">None</option>
                                 </select>
                               </div>
 
                               <div class="col-xs-12 col-lg-6 columns">
-                                <label class="form-elem" for="profile-pc">Periodontal Condition *</label> 
+                                <label class="form-elem" for="profile-pc">Periodontal Condition (choose)</label> 
                                 <select id="profile-pc" class="form-control" name="perdon" required>
                                     <option value="" disabled default selected style="display:none;"></option>
                                     <option value="Normal">Normal</option>
-                                    <option value="With Periodontal Problem">With Periodontal Problem</option>
+                                    <option value="With Periodontal Problem">Periodontal Problem</option>
                                 </select>
                               </div>
                             </div>
 
                             <div class="col-xs-6 col-lg-6 columns">  
                               <div class="col-xs-12 col-lg-6 columns">
-                                <label class="form-elem" for="profile-oh">Oral Hygiene *</label>  
+                                <label class="form-elem" for="profile-oh">Oral Hygiene Practices (choose)</label>  
                                 <select id="profile-oh" class="form-control" name="orhy" required>
                                   <option value="" disabled default selected style="display:none;"></option>
-                                  <option value="Good">Good</option>
-                                  <option value="Poor">Poor</option>
+                                  <option value="Good">Inferior</option>
+                                  <option value="Poor">Superior</option>
                                 </select>
                               </div>
 
                               <div class="col-xs-12 col-lg-6 columns">
-                                <label class="form-elem" for="profile-hob">History of Bleeding *</label>
+                                <label class="form-elem" for="profile-hob">History of Bleeding Gums (choose)</label>
                                 <select id="profile-hob" class="form-control" name="phb" required>
                                   <option value="" disabled default selected style="display:none;"></option>
                                   <option value="Yes">Yes</option>
@@ -133,23 +121,7 @@
                               </div>
                             </div>
 
-                            <div class="col-xs-12 columns">
-                              <hr />
-                              <label>Denture</label>
-                            </div>
-                              <div class="col-xs-6 col-lg-6 columns" style="display:inline-flex">
-                                <input id="checkbox1" name-"dupper" class="checkbox" type="checkbox">
-                                <label style="margin:4px" for="checkbox1">Upper</label>
-                                <input id="usince" class="form-control" style="width:50%; margin-left:5px; margin-bottom:5px" name="usince" disabled type="text"  placeholder="Since" />                            
-                              </div>
-                              <br/>
-                              <div class="col-xs-6 col-lg-6 columns" style="display:inline-flex">
-                                <input id="checkbox2" name="dlower" class="checkbox" type="checkbox">
-                                <label style="margin:4px" for="checkbox2">Lower</label>
-                                <input id="lsince" class="form-control" style="width:50%; margin-left:5px" name="lsince" disabled type="text" placeholder="Since" />
-                              </div>
                             
-                        </div>    
                         <!-- END OF DENTAL INFORMATION -->        
 
                         <!-- START OF MEDICAL INFORMATION --> 
@@ -168,16 +140,16 @@
                                 </div>
 
                                 <div class="col-xs-4 col-lg-4 columns">
-                                  <label>Chronic Ailments</label><br />
+                                  <label>Chronic Diseases</label><br />
                                   <div id="ca1">
-                                    <button id="add_chrail"  type="button" class="btn btn-info">Add Chronic Ailment</button>        
+                                    <button id="add_chrail"  type="button" class="btn btn-info">Add Chronic Condition</button>        
                                   </div><br>
                                 </div>
                                 
                                 <div class="col-xs-4 col-lg-4 columns">
-                                  <label>Drugs Taken</label>
+                                  <label>Prescription</label>
                                   <div id="dt1">
-                                    <button id="add_drugs" type="button" class="btn btn-info">Add Drug Taken</button>       
+                                    <button id="add_drugs" type="button" class="btn btn-info">Add Current Prescription</button>       
                                   </div><br>
                                 </div>
 
@@ -185,8 +157,8 @@
                                   <div class="col-xs-4 col-lg-4 columns">
                                     <label>Allergies</label><br />
                                     <div id="al1">
-                                      <button id="add_allergy" type="button" class="btn btn-info">Add Allergy </button><br>    
-                                      <!-- <button id="rmv_allergy" type="button" class="btn btn-danger">Remove</button> -->
+                                      <button id="add_allergy" type="button" class="btn btn-info">Allergies </button><br>    
+                                      
                                     </div><br>
                                   </div>
                                 </div>

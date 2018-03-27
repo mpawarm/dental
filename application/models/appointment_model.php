@@ -2,40 +2,11 @@
 class Appointment_model extends CI_Model{
 
 	public function send_email($email,$message){
-	/*	$config = array(
-	        'protocol' => 'smtp',
-	        'smtp_host' => 'ssl://smtp.googlemail.com',
-	        'smtp_port' => 465,
-	        'smtp_user' => 'gayatindc@gmail.com',
-	        'smtp_pass' => 'gayatin123'
-    	);
-    	$this->load->library('email',$config);
-    	$this->email->set_newline("\r\n");
-		$this->email->from('gayatindc@gmail.com','GAYATIN DENTAL CLINIC');
-		$this->email->to($email);
-		$this->email->subject('Appointment Notification');
-		$this->email->message($message);
-		$this->email->send();*/
+	
 	}
 
 	public function send_sms($user,$pass,$sms_from,$sms_to,$sms_msg){           
-    //     $query_string = "api.aspx?apiusername=".$user."&apipassword=".$pass;
-    //     $query_string .= "&senderid=".rawurlencode($sms_from)."&mobileno=".rawurlencode($sms_to);
-    //     $query_string .= "&message=".rawurlencode(stripslashes($sms_msg)) . "&languagetype=1";        
-    //     $url = "http://gateway.onewaysms.com.au:10001/".$query_string; 
-    //     $fd =  @implode ('', file ($url));
-    //     if ($fd){                       
-    // 		if ($fd > 0){
-				// $ok = "1";
-		  //   }        
-		  //   else {
-				// $ok = "0";
-		  //   }
-    //     }           
-    //     else{                                           
-    //         $ok = "0";       
-    //     }           
-    //     return $ok;  
+    
     } 
 	
 	public function get_reserved($date){
@@ -47,17 +18,11 @@ class Appointment_model extends CI_Model{
 
 	public function get_appointment_dates(){
 		$q = $this->db->query('SELECT DISTINCT `date` from `appointment` where `status` != "Cancelled"');
-		// $this->db->distinct();
-		// $this->db->select('date');
-		// $this->db->where('status!=','Cancelled');
-		// $q = $this->db->get('appointment');
 		return $q->result();
 	}
 
 	public function get_appointment_appno(){
 		$q = $this->db->query('SELECT * from `appointment` where `status` != "Cancelled"');
-		// $this->db->where('status!=','Cancelled');
-		// $q = $this->db->get('appointment');
 		return $q->result();
 	}
 
@@ -80,15 +45,13 @@ class Appointment_model extends CI_Model{
 	}
 
 	public function get_no_reserved($date){
-		//$q = $this->db->query('SELECT * from `appointment` where `date` = $date and `status` != "Cancelled"');
-    	$this->db->where('date',$date);
+		$this->db->where('date',$date);
 		$this->db->where('status !=','Cancelled');
     	$q = $this->db->get('appointment');
     	return $q->num_rows();
     }
 
     public function get_appointment_time($date){
-		//$q = $this->db->query('SELECT * from `appointment` where `date` = $date and `status` != "Cancelled"');
 		$this->db->where('date',$date);
 		$this->db->where('status !=','Cancelled');
 		$q = $this->db->get('appointment');

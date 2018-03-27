@@ -4,20 +4,20 @@ class Main extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('main_model');
-		date_default_timezone_set('Asia/Manila');
+		date_default_timezone_set('America/Detroit');
 	}
 	// LANDING PAGE VIEW
 	public function index(){
-		//$this->gayatin_appointment_model->reset_pending();
+		
 		$this->load->view('main/home');
 	}
 	// ABOUT US VIEW
 	public function aboutus(){
 		$data['general'] = $this->main_model->get_general_services();
-		$data['restorative'] = $this->main_model->get_restorative_services();
-		$data['endodontic'] = $this->main_model->get_endodontic_services();
+		//$data['restorative'] = $this->main_model->get_restorative_services();
+		//$data['endodontic'] = $this->main_model->get_endodontic_services();
 		$data['orthodontic'] = $this->main_model->get_orthodontic_services();
-		$data['prostodontic'] = $this->main_model->get_prostodontic_services();
+		//$data['prostodontic'] = $this->main_model->get_prostodontic_services();
 		$this->load->view('main/aboutus',$data);
 	}
 	

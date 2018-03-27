@@ -7,17 +7,7 @@ class Main_model extends CI_Model{
 		return $query->result();
 	}
 
-	public function get_restorative_services(){
-		$this->db->where('type','Restorative Dentistry');
-		$query = $this->db->get('services');
-		return $query->result();
-	}
 
-	public function get_endodontic_services(){
-		$this->db->where('type','Endodontic Dentistry');
-		$query = $this->db->get('services');
-		return $query->result();
-	}
 
 	public function get_orthodontic_services(){
 		$this->db->where('type','Orthodontic Dentistry');
@@ -25,11 +15,7 @@ class Main_model extends CI_Model{
 		return $query->result();
 	}
 
-	public function get_prostodontic_services(){
-		$this->db->where('type','Prostodontic Dentistry');
-		$query = $this->db->get('services');
-		return $query->result();
-	}
+
 
 	public function login_check($user,$pass){
 		$this->db->where('username',$user);

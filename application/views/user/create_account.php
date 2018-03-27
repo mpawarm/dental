@@ -5,7 +5,7 @@
 
 				<div class="element-container">
 					<div class="row center-block">
-						<legend>Add New Account</legend>
+						<legend>Add New User</legend>
 						<form id="cacc" method="post" action="<?php echo base_url();?>admin/create_account" role="form">
 							<div class="personal-inf col-xs-12 col-sm-12 col-md-12 columns">
 								<div class="col-xs-6 columns">	
@@ -22,7 +22,7 @@
 									<input id="lname" class="form-control" name="lname" type="text" required/>
 									<label class="form-elem" for="type">Account Type</label>
 		                                <select id="type" class="form-control" name="type" style="width:50%" required >
-		                                  <option value="1">Clinic Staff</option>
+		                                  <option value="1">Dental Staff</option>
 		                                  <option value="0">Dentist</option>
 		                                </select>  
 								</div>
@@ -30,8 +30,8 @@
 							<div class="account-inf col-xs-12 col-sm-12 col-md-12 columns" style="margin-top: 10px">	
 								<div class="col-xs-12 columns">
 									<span class="alert-success" style="margin: 10px 0; padding:5px; display:block">
-										<b>NOTE</b>: The default password is <b><i>password</i></b>. 
-										You may change your password once you have logged-in to your account.
+										<b>NOTE</b>: Default password is <b><i>password</i></b>. 
+										change your password after you logged-in to your account.
 									</span>
 								</div>
 							</div>							

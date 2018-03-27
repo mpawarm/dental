@@ -7,7 +7,7 @@
 			$this->load->model('appointment_model');
 			$this->load->model('patient_model');
 			$this->load->model('treatment_model');
-			date_default_timezone_set('Asia/Manila');
+			date_default_timezone_set('America/Detroit');
 		}
 
 		public function new_treatment($id){
@@ -63,7 +63,7 @@
 				$data['teeth'] = $this->treatment_model->get_treatment_record($rid);
 				$this->load->view('treatment/treatment_teethprofile',$data);
 			}else{
-				echo "<script>alert('Login is required.');</script>";
+				echo "<script>alert('Try Login.');</script>";
 				echo "<meta http-equiv=Refresh content=0;url='".base_url()."cadmin>";
 			}
 		}

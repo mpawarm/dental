@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?php echo $title?> | Gayatin DC</title>
+    <title><?php echo $title?> | Mississauga Dental Clinic (MDC)</title>
     <link rel="icon" href="<?php echo base_url();?>assets/img/gayatinlogo.png"/>
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/customized.css" />
@@ -50,12 +50,12 @@
                         </button>
                         <?php if(!$this->session->userdata('username')){?>
                           <a class="navbar-brand" href="<?php echo base_url();?>">
-                            <img src="<?php echo base_url();?>/assets/img/gayatinlogo.png" alt="Tooth Logo">Gayatin Dental Clinic
+                            <img src="<?php echo base_url();?>/assets/img/gayatinlogo.png" alt="Tooth Logo">Dental Clinic
                           </a>
                         <?php } ?>
                         <?php if($this->session->userdata('username')){?>
                           <a class="navbar-brand" href="#">
-                            <img src="<?php echo base_url();?>/assets/img/gayatinlogo.png" alt="Tooth Logo">Gayatin Dental Clinic
+                            <img src="<?php echo base_url();?>/assets/img/gayatinlogo.png" alt="Tooth Logo">Dental Clinic
                           </a>
                         <?php } ?>
                       </div>
@@ -75,41 +75,30 @@
                                 <li class="dropdown <?php if($num == 7): ?>active<?php endif;?>">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Appointments<span class="caret"></span></a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="<?php echo base_url();?>appointment/view_appointment_by_date">By Date</a></li>
-                                        <li><a href="<?php echo base_url();?>appointment/view_appointment_by_appno">View All</a></li>                  
+                                        <li><a href="<?php echo base_url();?>appointment/view_appointment_by_date">Date</a></li>
+                                        <li><a href="<?php echo base_url();?>appointment/view_appointment_by_appno">All</a></li>                  
                                     </ul>
                                 </li>
                                 <?php } ?>
 
                                 <!-- CLINIC CALENDAR -->      
                                 <li class="<?php if($num == 1): ?>active<?php endif;?>">
-                                    <a href="<?php echo base_url();?>calendar/display">Clinic Calendar</a>
+                                    <a href="<?php echo base_url();?>calendar/display">Appointment Calendar</a>
                                 </li>
                                 <?php if($this->session->userdata('username')){?>                  
                                   <!-- PATIENT PROFILES -->
                                   <li class="dropdown <?php if($num == 2): ?>active<?php endif;?>">
-                                      <a href="<?php echo base_url();?>patient/view_patients">Patient Profiles</a>
+                                      <a href="<?php echo base_url();?>patient/view_patients">Patient Portal</a>
                                   </li>                      
                                   <!-- CLINIC SERVICES -->
                                   <li class="<?php if($num == 8): ?>active<?php endif;?>">
-                                    <a href="<?php echo base_url();?>services/view_services">Clinic Services</a>
+                                    <a href="<?php echo base_url();?>services/view_services">Services Offered</a>
                                   </li>
                                   <!-- USER ACCOUNTS -->
                                   <?php if($this->session->userdata('handler')){?>
-                                          <li class="<?php if($num == 5): ?>active<?php endif;?>"><a href="<?php echo base_url();?>admin/view_staffs">User Accounts</a></li>
+                                          <li class="<?php if($num == 5): ?>active<?php endif;?>"><a href="<?php echo base_url();?>admin/view_staffs">User Portal</a></li>
                                   <?php }?>
-                                  <!-- REPORTS -->
-                                 <?php if($this->session->userdata('username')){?>                  
-                                <li class="dropdown <?php if($num == 6): ?>active<?php endif;?>">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Reports<span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                  										<li><a href="<?php echo base_url();?>reporting/customer_ratio">Patients Treated</a></li>
-                  										<li><a href="<?php echo base_url();?>reporting/gender_age">Gender/Age Classification</a></li>
-                  									   <li><a href="<?php echo base_url();?>reporting/services_rendered">Services Rendered</a></li>
-                  										<li><a href="<?php echo base_url();?>reporting/app_statuses">Appointment Statuses</a></li>                  
-                                    </ul>
-                                </li>
-                                <?php } ?>
+                                  
                                   <!-- ACCOUNT -->
                                   <li class="dropdown <?php if($num == 9): ?>active<?php endif;?>">
                                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account<span class="caret"></span></a>

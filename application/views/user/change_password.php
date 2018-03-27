@@ -3,7 +3,7 @@
 	<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 columns">						
 			<div class="element-container">
 				<div class="row" style="margin:0">
-					<legend>Change Password</legend>	
+					<legend>Reset Password</legend>	
 					<div class="col-xs-10 col-xs-offset-1 columns">											
 					<form id="chpass" method="post" action="<?php echo base_url();?>admin/update_password" role="form">
 						<input id="uid" class="form-control" value="<?php echo $id;?>" name="staffid" type="hidden" />

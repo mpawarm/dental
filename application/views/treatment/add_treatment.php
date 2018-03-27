@@ -57,12 +57,6 @@
                                 <select id="type" style="width:35%; margin-right:5px;" class="form-control" name="type" required>
                                   <option value="" disabled default selected style="display:none;">Treatment Type *</option>
                                   <option value="Tooth">Tooth</option>
-                                  <option value="Unit">Unit</option>
-                                  <option value="Post">Post</option>
-                                  <option value="Canal">Canal</option>
-                                  <option value="Arch">Arch</option>
-                                  <option value="Appliance">Appliance</option>
-                                  <option value="Quadrant">Quadrant</option>
                                   <option value="Unclassified">Unclassified</option>
                                 </select>                              
                                 <button id="atf" style="margin-right:5px" type="button" class="btn btn-info">
@@ -139,35 +133,35 @@ $(document).ready(function(){
         tctr++;
       }
 
-      else if($('#type').val() == 'Unit'){
-        $('<div id="u'+uctr+'"><div class="col-md-10"><input placeholder="Tooth #" type="text" name="utoothno'+uctr+'[]" class="form-control toothno" pattern="[1-4][1-8]" required/></div></div> <button style="margin-right:5px;margin-top:5px;width:85%" type="button" class="btn btn-info aubtn">Add<input id="aucnt" type="hidden" value="'+uctr+'"><input id="autmp" type="hidden" value="'+temp+'"></button>').insertAfter("#ndd"+ temp);
-        uctr++;
-      }
+      // else if($('#type').val() == 'Unit'){
+      //   $('<div id="u'+uctr+'"><div class="col-md-10"><input placeholder="Tooth #" type="text" name="utoothno'+uctr+'[]" class="form-control toothno" pattern="[1-4][1-8]" required/></div></div> <button style="margin-right:5px;margin-top:5px;width:85%" type="button" class="btn btn-info aubtn">Add<input id="aucnt" type="hidden" value="'+uctr+'"><input id="autmp" type="hidden" value="'+temp+'"></button>').insertAfter("#ndd"+ temp);
+      //   uctr++;
+      // }
 
-      else if($('#type').val() == 'Quadrant'){
-        $('<div id="q'+qctr+'"><div class="col-md-10"><select id="apptype" class="form-control" name="qtype'+qctr+'[]" required><option value="Upper right">Upper right</option><option value="Upper left">Upper left</option><option value="Lower left">Lower left</option><option value="All">All</option></select></div> </div> <button style="margin-right:5px;margin-top:5px;width:85%" type="button" class="btn btn-info aqbtn">Add<input id="aqcnt" type="hidden" value="'+qctr+'"><input id="aqtmp" type="hidden" value="'+temp+'"></button>').insertAfter("#ndd"+ temp);
-        qctr++;
-      }
+      // else if($('#type').val() == 'Quadrant'){
+      //   $('<div id="q'+qctr+'"><div class="col-md-10"><select id="apptype" class="form-control" name="qtype'+qctr+'[]" required><option value="Upper right">Upper right</option><option value="Upper left">Upper left</option><option value="Lower left">Lower left</option><option value="All">All</option></select></div> </div> <button style="margin-right:5px;margin-top:5px;width:85%" type="button" class="btn btn-info aqbtn">Add<input id="aqcnt" type="hidden" value="'+qctr+'"><input id="aqtmp" type="hidden" value="'+temp+'"></button>').insertAfter("#ndd"+ temp);
+      //   qctr++;
+      // }
 
-      else if($('#type').val() == 'Appliance'){
-        $('<div id="ap'+apctr+'"><div class="col-md-10"><select id="apptype" name="atype'+apctr+'[]" class="form-control" required><option value="Upper">Upper</option><option value="Lower">Lower</option><option value="Whole">Whole</option></select></div></div> <button style="margin-right:5px;margin-top:5px;width:85%" type="button" class="btn btn-info aapbtn">Add<input id="aapcnt" type="hidden" value="'+apctr+'"><input id="aaptmp" type="hidden" value="'+temp+'"></button>').insertAfter("#ndd"+ temp);
-        apctr++;
-      }
+      // else if($('#type').val() == 'Appliance'){
+      //   $('<div id="ap'+apctr+'"><div class="col-md-10"><select id="apptype" name="atype'+apctr+'[]" class="form-control" required><option value="Upper">Upper</option><option value="Lower">Lower</option><option value="Whole">Whole</option></select></div></div> <button style="margin-right:5px;margin-top:5px;width:85%" type="button" class="btn btn-info aapbtn">Add<input id="aapcnt" type="hidden" value="'+apctr+'"><input id="aaptmp" type="hidden" value="'+temp+'"></button>').insertAfter("#ndd"+ temp);
+      //   apctr++;
+      // }
 
-      else if($('#type').val() == 'Post'){
-        $('<div id="p'+pctr+'"><div class="col-md-10"><input placeholder="Tooth #" type="text" name="ptoothno'+pctr+'[]" class="form-control toothno" pattern="[1-4][1-8]" required/></div></div> <button style="margin-right:5px;margin-top:5px;width:85%" type="button" class="btn btn-info apbtn">Add<input id="apcnt" type="hidden" value="'+pctr+'"><input id="aptmp" type="hidden" value="'+temp+'"></button>').insertAfter("#ndd"+ temp);
-        pctr++;
-      }
+      // else if($('#type').val() == 'Post'){
+      //   $('<div id="p'+pctr+'"><div class="col-md-10"><input placeholder="Tooth #" type="text" name="ptoothno'+pctr+'[]" class="form-control toothno" pattern="[1-4][1-8]" required/></div></div> <button style="margin-right:5px;margin-top:5px;width:85%" type="button" class="btn btn-info apbtn">Add<input id="apcnt" type="hidden" value="'+pctr+'"><input id="aptmp" type="hidden" value="'+temp+'"></button>').insertAfter("#ndd"+ temp);
+      //   pctr++;
+      // }
 
-      else if($('#type').val() == 'Canal'){
-        $('<div id="c'+cctr+'"><div class="col-md-10"><input placeholder="Tooth #" type="text" name="ctoothno'+cctr+'[]" class="form-control toothno" pattern="[1-4][1-8]" required/></div></div> <button style="margin-right:5px;margin-top:5px;width:85%" type="button" class="btn btn-info acbtn">Add<input id="accnt" type="hidden" value="'+cctr+'"><input id="actmp" type="hidden" value="'+temp+'"></button>').insertAfter("#ndd"+ temp);
-        cctr++;
-      }
+      // else if($('#type').val() == 'Canal'){
+      //   $('<div id="c'+cctr+'"><div class="col-md-10"><input placeholder="Tooth #" type="text" name="ctoothno'+cctr+'[]" class="form-control toothno" pattern="[1-4][1-8]" required/></div></div> <button style="margin-right:5px;margin-top:5px;width:85%" type="button" class="btn btn-info acbtn">Add<input id="accnt" type="hidden" value="'+cctr+'"><input id="actmp" type="hidden" value="'+temp+'"></button>').insertAfter("#ndd"+ temp);
+      //   cctr++;
+      // }
 
-      else if($('#type').val() == 'Arch'){
-        $('<div id="ar'+arctr+'"><div class="col-md-10"><input placeholder="Tooth #" type="text" name="atoothno'+arctr+'[]" class="form-control toothno" pattern="[1-4][1-8]" required/></div></div> <button style="margin-right:5px;margin-top:5px;width:85%" type="button" class="btn btn-info aarbtn">Add<input id="aarcnt" type="hidden" value="'+arctr+'"><input id="aartmp" type="hidden" value="'+temp+'"></button>').insertAfter("#ndd"+ temp);
-        arctr++;
-      }
+      // else if($('#type').val() == 'Arch'){
+      //   $('<div id="ar'+arctr+'"><div class="col-md-10"><input placeholder="Tooth #" type="text" name="atoothno'+arctr+'[]" class="form-control toothno" pattern="[1-4][1-8]" required/></div></div> <button style="margin-right:5px;margin-top:5px;width:85%" type="button" class="btn btn-info aarbtn">Add<input id="aarcnt" type="hidden" value="'+arctr+'"><input id="aartmp" type="hidden" value="'+temp+'"></button>').insertAfter("#ndd"+ temp);
+      //   arctr++;
+      // }
 
 
     }else{

@@ -56,20 +56,7 @@ public function get_clientdata($points){
 						}
 						$usernamesize[$innerindex]+=1;
 			}
-		}		/*for($x=0;$x<$last && $row->username!=$usernameque[$x];$x++);
-				if($x==$last){
-					$usernameque[$last]=$row->username;
-					$point2=explode('-',$row->date);
-					$innerindex=((int)$point2[$index])-((int)$point1[$index]);
-					$qry=$this->db->where("username",$usernameque[$x])->select("gender,age,")->get("patients");		
-						foreach($qry->result() as $inerow){
-								$ndex=$inerow->gender;
-								$gender[$innerindex]->patient[$ndex]+=1;
-								$age[$innerindex]->gender[$ndex][$agedex[$innerindex]->index[$ndex]]=$inerow->age;
-								$agedex[$innerindex]->index[$ndex]+=1;
-						}
-			$last+=1;
-			}*/
+		}		
 			
 		return array("age"=>$age,"agedex"=>$agedex,"gender"=>$gender,"size"=>$size1);
 	}

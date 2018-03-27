@@ -30,10 +30,8 @@
                               <label for="ser-ct">Category</label>
                                 <select id="ser-ct" class="form-control" name="serv-ct" required >
                                   <option value="General">General</option>
-                                  <option value="Restorative Dentistry">Restorative Dentistry</option>
-                                  <option value="Endodontic Dentistry">Endodontic Dentistry</option>
                                   <option value="Orthodontic Dentistry">Orthodontic Dentistry</option>
-                                  <option value="Prostodontic Dentistry">Prostodontic Dentistry</option>  
+                                  
                                 </select>  
                             </div>
                             
@@ -41,11 +39,7 @@
                               <label for="ser-cat">Type</label>
                                 <select id="ser-cat" class="form-control" name="serv-cat" required >
                                   <option value="unclassified">unclassified</option>
-                                  <option value="post">post</option>
-                                  <option value="unit">unit</option>
                                   <option value="tooth">tooth</option>
-                                  <option value="arch">arch</option>  
-                                  <option value="quadrant">quadrant</option>
                                 </select>  
                             </div>                           
                             
@@ -84,11 +78,10 @@
                               <div class="col-xs-5 columns">
                                 <label for="edit-ct">Category</label>
                                     <select id="edit-ct" class="form-control" name="edit-ct" required >
-                                      <option value="General">General</option>
-                                      <option value="Restorative Dentistry">Restorative Dentistry</option>
-                                      <option value="Endodontic Dentistry">Endodontic Dentistry</option>
+                                      <option value="General">General</option>          
+
                                       <option value="Orthodontic Dentistry">Orthodontic Dentistry</option>
-                                      <option value="Prostodontic Dentistry">Prostodontic Dentistry</option>  
+                                      
                                     </select>
                               </div>
                             </div>
@@ -98,11 +91,7 @@
                                 <label for="ser-cat">Type</label>
                                 <select id="edit-cat" class="form-control" name="edit-cat" required >
                                   <option value="unclassified">unclassified</option>
-                                  <option value="post">post</option>
-                                  <option value="unit">unit</option>
                                   <option value="tooth">tooth</option>
-                                  <option value="arch">arch</option>  
-                                  <option value="quadrant">quadrant</option>
                                 </select>
                               </div>                            
                               <input type="hidden" id="ser-id" name="ser-id" value="" />

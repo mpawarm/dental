@@ -6,7 +6,7 @@ class Appointment extends CI_Controller{
 		$this->load->model('calendar_model');
 		$this->load->model('appointment_model');
 		$this->load->model('patient_model');
-		date_default_timezone_set('Asia/Manila');
+		date_default_timezone_set('America/Detroit');
 		$firstparam = "";
 		$secondparam = "";
 		$thirdparam = "";
@@ -25,7 +25,7 @@ class Appointment extends CI_Controller{
 					$this->load->view('appointment/issue_appointment',$data);
 				}
 				else{
-					echo "<script>alert('Scheduled appointment should be at least 1 day after the current date.');</script>";
+					echo "<script>alert('Appointment can be only be should be at least 1 day after the current date.');</script>";
 					echo "<script>window.location='".base_url()."calendar/display'</script>";
 				}
 			}else{
@@ -187,7 +187,7 @@ class Appointment extends CI_Controller{
 							  'code' => md5($code),
 							  'testcode' => $code
 							);
-				$message = "Gayatin Dental Clinic: This is your appointment code for confirming your appointment: ".$code.", enter the code to continue. Thank you.";
+				$message = "Mississauga Dental Clinic: Appointment confirmation code: ".$code.", enter the code to continue. Thank you.";
 				$this->load->view('appointment/confirm_appointment',$data);
 				if(!$this->session->userdata('username')){
 					if($data['newusername']==''){
@@ -231,10 +231,10 @@ class Appointment extends CI_Controller{
 							);
 					$pinfo= $this->patient_model->get_patient_emailbyuname($data['username']);
 					$this->appointment_model->add_appointment($data);
-					$message = "Gayatin Dental Clinic: Your appointment booking on ".date('j F Y',strtotime($data['date']))." at ".$data['time']." is successful, your appointment code is: ".$appointmentno.". You will use this code to reschedule or cancel your appointment. Please come on time. Thank you.";
+					$message = "Mississauga Dental Clinic: Your appointment is booked for ".date('j F Y',strtotime($data['date']))." at ".$data['time'].". Your appointment code is: ".$appointmentno.". Please keep this code to reschedule or cancel your appointment. Thank you.";
 					$this->appointment_model->send_email($pinfo->email,$message);
 					$dump=$this->appointment_model->send_sms("APINVD2126X89","APINVD2126X89NVD21","msun",$pinfo->mobileno,$message);
-					echo "<script>alert('Your appointment booking is successful, please check your phone or email for your appointment code. Please save the code because it will be used to reschedule or cancel your appointment. Thank you.');</script>";
+					echo "<script>alert('Appointment booked!!!. Check your email for appointment code. Thank you.');</script>";
 					if($this->session->userdata('username')){
 						echo "<meta http-equiv=Refresh content=0;url=../appointment/view_appointment_by_date>";
 					}
@@ -285,7 +285,7 @@ class Appointment extends CI_Controller{
 				if($check == 0){
 					$this->patient_model->add_patient($pdata);
 					$this->appointment_model->add_appointment($data);
-					$message = "Gayatin Dental Clinic: Your appointment booking on ".date('j F Y',strtotime($data['date']))." at ".$data['time']." is successful, your appointment code is: ".$appointmentno.". You will use this code to reschedule or cancel your appointment. Please come on time. Thank you.";
+					$message = "Mississauga Dental Clinic: Your appointment booking on ".date('j F Y',strtotime($data['date']))." at ".$data['time']." is successful, your appointment code is: ".$appointmentno.". You will use this code to reschedule or cancel your appointment. Please come on time. Thank you.";
 					$this->appointment_model->send_email($this->input->post('email'),$message);
 					$dump=$this->appointment_model->send_sms("APINVD2126X89","APINVD2126X89NVD21","msun",$this->input->post('mobileno'),$message);
 					echo "<script>alert('Your appointment booking is successful, please check your phone or email for your appointment code. Please save the code because it will be used to reschedule or cancel your appointment. Thank you.');</script>";

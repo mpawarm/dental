@@ -119,7 +119,7 @@ public function app_statuses(){
 public function app_status(){
 	$points=$this->input->post("points");
 	$app=$this->reporting_model->get_app($points);
-	echo "Appointments Created:".$app["Created"]."-Served:".$app["Served"]."-Cancelled:".$app["Cancelled"]."-No Show:".$app["Confirmed"];
+	echo "Appointments:".$app["Created"]."-Completed:".$app["Served"]."-Cancelled:".$app["Cancelled"]."-No Show:".$app["Confirmed"];
 }
 
 }

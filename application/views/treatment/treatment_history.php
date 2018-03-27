@@ -10,7 +10,7 @@
 			        <thead>
 			            <tr class="alert-info">
 			            	<th class="text-center">Date</th>
-			            	<th class="text-center">Dentist in Charge</th>
+			            	<th class="text-center">Dentist Appointed</th>
 			            </tr>
 			        </thead>
 			        <tbody id="tbody" style="text-align: center">	

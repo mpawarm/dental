@@ -8,12 +8,12 @@
       <div class="panel panel-info text-center">
          <div class="panel-heading">
             <span class="glyphicon glyphicon-time"></span>
-            <span><strong>Clinic Schedule</strong></span>
+            <span><strong>Clinic Hours</strong></span>
          </div>
          <div class="panel-body">
-           <p><strong>Monday to Friday</strong></p>
-           <p>7:30 AM - 4:00 PM (<i>on school days</i>)</p>
-           <p>9:00 AM - 5:00 PM (<i>on summer</i>)</p>
+           <p><strong>Monday to Saturday</strong></p>
+           <p>7:30 AM - 4:00 PM (<i>Fall/Winter</i>)</p>
+           <p>9:00 AM - 5:00 PM (<i>Summer</i>)</p>
            <br />
            <p><strong>Saturday</strong></p>
            <p>9:00am - 5:00pm</p>                          
@@ -22,10 +22,10 @@
        <div class="panel panel-info text-center">
           <div class="panel-heading">
             <span class="glyphicon glyphicon-home"></span>
-            <span><strong>Visit Us</strong></span>
+            <span><strong>Come Visit Us!!!</strong></span>
           </div>
           <div class="panel-body">
-            <strong>LK Building Subangdaku, Mandaue City, Cebu</strong>
+            <strong>Square One, Mississauga, Ontario</strong>
           </div>
       </div>  
       <div class="panel panel-info text-center">
@@ -34,8 +34,8 @@
             <span><strong>Contact Us</strong></span>
           </div>
           <div class="panel-body">
-            <p><strong>344 - 0377</strong></p>
-            <p><strong>511 - 9250</strong></p>
+            <p><strong>123 - 7890</strong></p>
+            <p><strong>234 - 0987</strong></p>
           </div>
       </div>      
     <!-- </div> -->
@@ -62,39 +62,7 @@
             </div>
           </div>
       
-          <div class="panel panel-info text-center">
-            <div class="panel-heading" role="tab" id="headingTwo">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-target="#collapseTwo" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="text-decoration:none">
-                  <strong>Restorative Dentistry</strong>
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-              <div class="list-group list-grp-services">
-                <?php foreach($restorative as $services):?>
-                  <li class="list-group-item"><?php echo $services->dental_procedure;?></li>
-                <?php endforeach;?>
-              </div>
-            </div>
-          </div>
-      
-          <div class="panel panel-info text-center">
-            <div class="panel-heading" role="tab" id="headingThree">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-target="#collapseThree" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="text-decoration:none">
-                  <strong>Endodontic Dentistry</strong>
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-              <div class="list-group list-grp-services">
-                <?php foreach($endodontic as $services):?>
-                  <li class="list-group-item"><?php echo $services->dental_procedure;?></li>
-                <?php endforeach;?>
-              </div>
-            </div>
-          </div>
+          
       
           <div class="panel panel-info text-center">
             <div class="panel-heading" role="tab" id="headingFour">
@@ -112,24 +80,9 @@
               </div>
             </div>
           </div>
-      
-          <div class="panel panel-info text-center">
-            <div class="panel-heading" role="tab" id="headingFive">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-target="#collapseFive" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" style="text-decoration:none">
-                  <strong>Prostodontic Dentistry</strong>
-                </a>
-              </h4>
-            </div>
-            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-              <div class="list-group list-grp-services">
-                <?php foreach($prostodontic as $services):?>
-                  <li class="list-group-item"><?php echo $services->dental_procedure;?></li>
-                <?php endforeach;?>
-              </div>
-            </div>
-          </div>
-      </div>
+      <!-- 
+          
+      </div> -->
   </div>
   </div>  
   </div>

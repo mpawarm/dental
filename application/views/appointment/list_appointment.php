@@ -2,14 +2,14 @@
 <?php $ctr = -1;?>
 <div class="row element-container">
     <legend>Clinic Appointments</legend>
-    <span id="message" style="color:red"></span>
+    <span id="message" style="color:cyan"></span>
       <div id="content" style="margin:20px">
         <div class="col-lg-10 columns col-lg-offset-1"> 
           <table id="example" class="table table-striped text-center" cellspacing="0" width="100%">
             <thead class="alert-info">
                 <tr>
                     <th class="text-center" width="50%">Date</th>
-                    <th class="text-center" width="50%">Timeslots with Appointments</th>
+                    <th class="text-center" width="50%">Time options</th>
                 </tr>
             </thead> 
             <tbody>

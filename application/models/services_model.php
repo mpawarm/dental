@@ -1,7 +1,6 @@
 <?php
 class Services_model extends CI_Model{
-	// getting the list of clinic services
-	public function get_services(){
+		public function get_services(){
 		$res = $this->db->get('services');
 		return $res->result();
 	}

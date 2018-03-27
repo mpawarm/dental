@@ -9,10 +9,7 @@
 		<div class="row center-block">
 			<div class="text-center" id="clockbox"></div>
 			<div class="alert-success text-center" style="margin: 10px 10%; padding: 15px">
-				<strong>Note</strong>: To create an appointment booking, 
-				select an available date (<i>the one which has a white background</i>) on the calendar. 
-				<br/>The earliest date for an appointment booking is at least 1 day after the current date. 
-				<br/>If your appointment is very urgent, please contact the clinic directly. Thank you.
+				<strong>Note</strong>: Select an available date. 
 			</div>	
 			<?php echo $calendar; ?>	
 			<div class="col-lg-6 col-lg-offset-3 columns">
@@ -20,20 +17,20 @@
 				<?php if(!$this->session->userdata('username')){?>
 					<a href="<?php echo base_url();?>appointment/reschedule_appointment">
 						<button class="btn btn-info btn-moveapp" style="margin-left:12%">
-							<span class="glyphicon glyphicon-share-alt"></span> Reschedule an appointment
+							<span class="glyphicon glyphicon-share-alt"></span> Reschedule 
 						</button>
 					</a>
 					<button class="btn btn-warning btn-cancelapp">
-						<span class="glyphicon glyphicon-remove"></span> Cancel an appointment
+						<span class="glyphicon glyphicon-remove"></span> Cancel 
 					</button>
 				<?php } else {?>
 					<a href="<?php echo base_url();?>appointment/reschedule_appointment/">
 						<button style="display:none" class="btn btn-info btn-moveapp">
-							<span class="glyphicon glyphicon-share-alt"></span>Reschedule an appointment
+							<span class="glyphicon glyphicon-share-alt"></span>Reschedule 
 						</button>
 					</a>
 					<button style="display:none" class="btn btn-danger btn-cancelapp">
-						<span class="glyphicon glyphicon-remove"></span>Cancel an appointment
+						<span class="glyphicon glyphicon-remove"></span>Cancel 
 					</button>
 				<?php }?>
 
@@ -142,7 +139,7 @@
 								</select>
 							</div>
 							<div class="col-xs-5 columns">
-								<label for="sched">Choose Timeslot(s) *</label>
+								<label for="sched">Choose Time</label>
 								<select id="sched" class="form-control" name="time" required></select>
 								<br />			
 							</div>
@@ -254,7 +251,7 @@ var date=document.getElement
 			else if(data[8]=="Active")
 			{
 				
-				$(this).css("background-color","rgba(68, 159, 207, 1)");
+				$(this).css("background-color","rgba(0, 191, 255, 1)");
 				$(this).css('cursor','pointer');
 			}
 	});
@@ -402,7 +399,7 @@ $.post("<?php echo base_url();?>calendar/get_sched",{date:date.value},function(d
 	data=data.split("space");
 	var x;
 
-	if(data!="empty" && data[0]!="Clinic is not open during Sunday's")
+	if(data!="empty" && data[0]!="Clinic closed on Sunday")
 	list+="<option value='"+close+"'>"+ close+"</option>";
 	
 	for(x=0;x<data.length-1;x++)

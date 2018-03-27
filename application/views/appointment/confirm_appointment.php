@@ -6,7 +6,7 @@
 	<form id="confirmation" method="post" action="<?php echo base_url();?>appointment/add_appointment" role="form">
 		<div class="element-container">
 			<div class="row" style="margin: 0">								
-				<legend>Appointment Confirmation</legend>							
+				<legend>Appointment Booking Confirmation</legend>							
 				<div class="col-xs-12 columns">												
 					<input id="date" type="hidden" name="date" value="<?php echo $date;?>"/>
 					<input id="time" type="hidden" name="time" value="<?php echo $time;?>"/>
@@ -24,7 +24,7 @@
 					<input id="email" type="hidden" name="email" value="<?php echo $email;?>"/>
 					<input id="mobileno" type="hidden" name="mobileno" value="<?php echo $mobileno;?>"/>
 					<div class="col-xs-5 col-xs-offset-1 columns">
-						<label>Schedule Details</label> <br />
+						<label>Schedule Information</label> <br />
 						<label>Date</label>: <?php echo date("F j, Y",strtotime($date));?> <br />
 						<label>Time</label>: <?php echo $time;?>
 					</div>
@@ -32,9 +32,9 @@
 					<div class="col-xs-5 columns">
 						<label for="mycode">Appointment code</label>
 							<?php if($this->session->userdata('username')){ ?>
-								<input id="mycode" class="form-control" placeholder="Enter the code sent to your phone/email" name="mycode" type="text" value="<?php echo $testcode;?>" required/>
+								<input id="mycode" class="form-control" placeholder="Enter the appointment code" name="mycode" type="text" value="<?php echo $testcode;?>" required/>
 							<?php } else { ?>
-								<input id="mycode" class="form-control" placeholder="Enter the code sent to your phone/email" name="mycode" type="text" required/>
+								<input id="mycode" class="form-control" placeholder="Enter the appointment" name="mycode" type="text" required/>
 							<?php } ?>
 					</div>
 				</div>
@@ -58,7 +58,7 @@
 					swal('ERROR','Incorrect Code','error');
 				}
 				else{
-					if(confirm('Are you sure to reserve an appointment on ' + $('#date').val() + ' at ' + $('#time').val())){
+					if(confirm('Confirm appointment for ' + $('#date').val() + ' at ' + $('#time').val())){
 				        $('#confirmation').submit();
 				    }
 				}

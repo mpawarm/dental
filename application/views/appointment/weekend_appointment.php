@@ -18,7 +18,7 @@
                         <table id="example" class="table table-striped" cellspacing="0" width="100%" style="text-align: center">
                         <thead>
                             <tr class="alert-info">
-                                <th class="text-center vertical-middle-align" width="25%">Name</th>
+                                
                                 <th class="text-center vertical-middle-align" width="20%">Treatment Type</th>
                                 <th class="text-center vertical-middle-align" width="5%">Appointment Code</th>
                                 <th class="text-center vertical-middle-align" width="5%">Status</th>
@@ -36,12 +36,12 @@
                               <td class="vertical-middle-align"><?php echo $ts->appointmentno;?></td>
                               <td class="vertical-middle-align" <?php if($ts->status == 'Confirmed'){?> style="color:orange"<?php } else {?>style="color:green"<?php } ?>><b><?php echo $ts->status;?></td>
                               <td class="vertical-middle-align">
-                                <a href="<?php echo base_url();?>appointment/arrived_appointment/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the confirmation of the patient's presence?');">
+                                <a href="<?php echo base_url();?>appointment/arrived_appointment/<?php echo $ts->id;?>" onclick="return confirm('Confirm patient?');">
                                   <button type="button" class="table-btn btn btn-success add" <?php if((strtotime($date))==(strtotime(date('Y-m-d'))) && $ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-ok"></span> Accept
                                   </button>
                                 </a>  
-                                <a href="<?php echo base_url();?>appointment/reschedule_appointment/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the moving of the appointment to another schedule?');">
+                                <a href="<?php echo base_url();?>appointment/reschedule_appointment/<?php echo $ts->id;?>" onclick="return confirm('Schedule another appointment?');">
                                   <button type="button" class="table-btn btn btn-info move" <?php if($ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-share-alt"></span> Reschedule
                                   </button>
@@ -89,17 +89,17 @@
                               <td class="vertical-middle-align"><?php echo $ts->appointmentno;?></td>
                               <td class="vertical-middle-align" <?php if($ts->status == 'Confirmed'){?> style="color:orange"<?php } else {?>style="color:green"<?php } ?>><b><?php echo $ts->status;?></td>
                               <td class="vertical-middle-align">
-                                <a href="<?php echo base_url();?>appointment/arrived_appointment/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the confirmation of the patient's presence?');">
+                                <a href="<?php echo base_url();?>appointment/arrived_appointment/<?php echo $ts->id;?>" onclick="return confirm('confirm patient?');">
                                   <button type="button" class="table-btn btn btn-success add" <?php if((strtotime($date))==(strtotime(date('Y-m-d'))) && $ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-ok"></span> Accept
                                   </button>
                                 </a>  
-                                <a href="<?php echo base_url();?>appointment/reschedule_appointment/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the moving of the appointment to another schedule?');">
+                                <a href="<?php echo base_url();?>appointment/reschedule_appointment/<?php echo $ts->id;?>" onclick="return confirm('Schedule another appointment?');">
                                   <button type="button" class="table-btn btn btn-info move" <?php if($ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-share-alt"></span> Reschedule
                                   </button>
                                 </a>
-                                <a href="<?php echo base_url();?>appointment/cancel_appointment/<?php echo $date;?>/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the cancellation of the appointment?');">
+                                <a href="<?php echo base_url();?>appointment/cancel_appointment/<?php echo $date;?>/<?php echo $ts->id;?>" onclick="return confirm('cancel appointment?');">
                                   <button type="button" class="table-btn btn btn-danger remove" <?php if((strtotime($date))>=(strtotime(date('Y-m-d'))) && $ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-remove"></span>  Cancel
                                   </button>
@@ -196,17 +196,17 @@
                               <td class="vertical-middle-align"><?php echo $ts->appointmentno;?></td>
                               <td class="vertical-middle-align" <?php if($ts->status == 'Confirmed'){?> style="color:orange"<?php } else {?>style="color:green"<?php } ?>><b><?php echo $ts->status;?></td>
                               <td class="vertical-middle-align">
-                                <a href="<?php echo base_url();?>appointment/arrived_appointment/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the confirmation of the patient's presence?');">
+                                <a href="<?php echo base_url();?>appointment/arrived_appointment/<?php echo $ts->id;?>" onclick="return confirm('Confirm patient?');">
                                   <button type="button" class="table-btn btn btn-success add" <?php if((strtotime($date))==(strtotime(date('Y-m-d'))) && $ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-ok"></span> Accept
                                   </button>
                                 </a>  
-                                <a href="<?php echo base_url();?>appointment/reschedule_appointment/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the moving of the appointment to another schedule?');">
+                                <a href="<?php echo base_url();?>appointment/reschedule_appointment/<?php echo $ts->id;?>" onclick="return confirm('schedule another appointment?');">
                                   <button type="button" class="table-btn btn btn-info move" <?php if($ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-share-alt"></span> Reschedule
                                   </button>
                                 </a>
-                                <a href="<?php echo base_url();?>appointment/cancel_appointment/<?php echo $date;?>/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the cancellation of the appointment?');">
+                                <a href="<?php echo base_url();?>appointment/cancel_appointment/<?php echo $date;?>/<?php echo $ts->id;?>" onclick="return confirm('cancel appointment?');">
                                   <button type="button" class="table-btn btn btn-danger remove" <?php if((strtotime($date))>=(strtotime(date('Y-m-d'))) && $ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-remove"></span>  Cancel
                                   </button>
@@ -249,17 +249,17 @@
                               <td class="vertical-middle-align"><?php echo $ts->appointmentno;?></td>
                               <td class="vertical-middle-align" <?php if($ts->status == 'Confirmed'){?> style="color:orange"<?php } else {?>style="color:green"<?php } ?>><b><?php echo $ts->status;?></td>
                               <td class="vertical-middle-align">
-                                <a href="<?php echo base_url();?>appointment/arrived_appointment/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the confirmation of the patient's presence?');">
+                                <a href="<?php echo base_url();?>appointment/arrived_appointment/<?php echo $ts->id;?>" onclick="return confirm('confirm patient?');">
                                   <button type="button" class="table-btn btn btn-success add" <?php if((strtotime($date))==(strtotime(date('Y-m-d'))) && $ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-ok"></span> Accept
                                   </button>
                                 </a>  
-                                <a href="<?php echo base_url();?>appointment/reschedule_appointment/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the moving of the appointment to another schedule?');">
+                                <a href="<?php echo base_url();?>appointment/reschedule_appointment/<?php echo $ts->id;?>" onclick="return confirm('schedule another appointment?');">
                                   <button type="button" class="table-btn btn btn-info move" <?php if($ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-share-alt"></span> Reschedule
                                   </button>
                                 </a>
-                                <a href="<?php echo base_url();?>appointment/cancel_appointment/<?php echo $date;?>/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the cancellation of the appointment?');">
+                                <a href="<?php echo base_url();?>appointment/cancel_appointment/<?php echo $date;?>/<?php echo $ts->id;?>" onclick="return confirm('cancel appointment?');">
                                   <button type="button" class="table-btn btn btn-danger remove" <?php if((strtotime($date))>=(strtotime(date('Y-m-d'))) && $ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-remove"></span>  Cancel
                                   </button>
@@ -302,17 +302,17 @@
                               <td class="vertical-middle-align"><?php echo $ts->appointmentno;?></td>
                               <td class="vertical-middle-align" <?php if($ts->status == 'Confirmed'){?> style="color:orange"<?php } else {?>style="color:green"<?php } ?>><b><?php echo $ts->status;?></td>
                               <td class="vertical-middle-align">
-                                <a href="<?php echo base_url();?>appointment/arrived_appointment/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the confirmation of the patient's presence?');">
+                                <a href="<?php echo base_url();?>appointment/arrived_appointment/<?php echo $ts->id;?>" onclick="return confirm('cancel appointment?');">
                                   <button type="button" class="table-btn btn btn-success add" <?php if((strtotime($date))==(strtotime(date('Y-m-d'))) && $ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-ok"></span> Accept
                                   </button>
                                 </a>  
-                                <a href="<?php echo base_url();?>appointment/reschedule_appointment/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the moving of the appointment to another schedule?');">
+                                <a href="<?php echo base_url();?>appointment/reschedule_appointment/<?php echo $ts->id;?>" onclick="return confirm('cancel appointment?');">
                                   <button type="button" class="table-btn btn btn-info move" <?php if($ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-share-alt"></span> Reschedule
                                   </button>
                                 </a>
-                                <a href="<?php echo base_url();?>appointment/cancel_appointment/<?php echo $date;?>/<?php echo $ts->id;?>" onclick="return confirm('Proceed with the cancellation of the appointment?');">
+                                <a href="<?php echo base_url();?>appointment/cancel_appointment/<?php echo $date;?>/<?php echo $ts->id;?>" onclick="return confirm('cancelappointment?');">
                                   <button type="button" class="table-btn btn btn-danger remove" <?php if((strtotime($date))>=(strtotime(date('Y-m-d'))) && $ts->status=='Confirmed'){} else{?> disabled <?php } ?>>
                                     <span class="glyphicon glyphicon-remove"></span>  Cancel
                                   </button>

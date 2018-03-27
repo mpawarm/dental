@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login | Gayatin DC</title>
+    <title>Admin Login | Mississauga MDC</title>
     <link rel="icon" href="<?php echo base_url();?>assets/img/gayatinlogo.png"/>
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/customized.css" />
@@ -18,10 +18,7 @@
           <div class="panel login-panel panel-info text-center" >                               
             <div class="panel-body login-panel-body">
               <div class="panel-heading">
-               <span>
-                <img src="<?php echo base_url();?>/assets/img/gayatinlogo.png" alt="Tooth">
-                <img src="<?php echo base_url()?>/assets/img/gayatindc-logo.png " alt="Gayatin Dental Clinic Logo" />        
-               </span>
+               
               </div>
               <span class="text-center login-errormsg"><?php echo $message;?></span>
               <div style="display:none" id="login-alert" class="alert alert-danger col-xs-12"></div>

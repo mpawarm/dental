@@ -1,6 +1,6 @@
 <?php $this->load->view('header', array('num' => 7, 'title' => 'List of Appointments')); ?>
 <div class="element-container">
-    <legend>Clinic Appointments for <?php echo date("F j, Y", strtotime($date));?></legend>
+    <legend>Clinic Appointments <?php echo date("F j, Y", strtotime($date));?></legend>
     <span id="message" style="color:red"></span>
 
       <div id="content" style="margin:20px">
@@ -22,7 +22,7 @@
                                 <th class="text-center vertical-middle-align" width="20%">Treatment Type</th>
                                 <th class="text-center vertical-middle-align" width="5%">Appointment Code</th>
                                 <th class="text-center vertical-middle-align" width="5%">Status</th>
-                                <th class="text-center vertical-middle-align" width="45%">Action</th>
+                                <th class="text-center vertical-middle-align" width="45%">FlagSSS</th>
                             </tr>
                         </thead>
                           <tbody>

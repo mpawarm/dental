@@ -9,7 +9,7 @@ $i;
 			<legend id="title">Appointment Booking for <?php echo date("F j, Y",strtotime($date));?></legend>
 				
 				<div class="col-xs-6 col-lg-3 col-lg-offset-3 columns">
-					<label for="dt" style="margin-bottom:5px; display:flex">Choose an open timeslot</label>	
+					<label for="dt" style="margin-bottom:5px; display:flex">Choose a time</label>	
 					<input type="hidden" id="omcode"/>
 					<input id="dt" type="hidden" name="date" value="<?php echo $date;?>"/>
 						<select class="form-control" name="av-timeslots" id="av-timeslots">
@@ -28,7 +28,7 @@ $i;
 						<select id="type" class="form-control" name="av-timeslots" id="av-timeslots">
 						 	<option value="" disabled default selected style="display:none;"></option>
 							<option value="new-patient">New Patient</option>
-						    <option value="old-patient">Old Patient</option>
+						    <option value="old-patient">Existing Patient</option>
 						</select>
 					</div>
 				</div>
@@ -52,7 +52,7 @@ $i;
 							<input id="opatient-usrname" class="form-control" placeholder="Please input your username" name="opatient-usrname" type="text" required/>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-md-6 columns">	
-							<label class="form-elem" for="reason">Type of treatment to avail</label>
+							<label class="form-elem" for="reason">Type of treatment requested</label>
 							<input id="oreason" class="form-control" name="oreason" type="reason" />
 						</div>
 					</div>											
@@ -60,10 +60,10 @@ $i;
 						<br />
 						<label>
 							<input id="chck" type="checkbox"> 
-							I'm aware that I will receive an email and text message notification about my appointment booking.
+							email a dental appointment booking confirmation.
 						</label>
 						<hr />	
-						<button id="sub1" type="submit" class="btn btn-success">Continue</button>
+						<button id="sub1" type="submit" class="btn btn-success">Next</button>
 					</div>
 				</div>									
 			</div>	
@@ -83,13 +83,13 @@ $i;
 										<div class="col-xs-12 col-sm-12 col-md-12 columns">				  				
 											<div class="col-xs-12 col-sm-6 col-md-6 columns">	
 												<label class="form-elem" for="uname">Username *</label> <br> 
-												<span class="alert-success" style="margin: 0 0 5px 0; padding:5px; display:block"><b>NOTE:</b> This will be used for future appointment bookings.<br>&nbsp</span>	
+												<span class="alert-success" style="margin: 0 0 5px 0; padding:5px; display:block"><b>NOTE:</b> Required for future appointments scheduling.<br>&nbsp</span>	
 												<input id="uname" class="form-control" placeholder="This serves as your identifier" name="uname" type="text" required/>
 											</div>
 											<div class="col-xs-12 col-sm-6 col-md-6 columns">	
 												<label class="form-elem" for="cno">Mobile number *</label> <br>	 
-												<span class="alert-warning" style="margin: 0 0 5px 0; padding:5px; display:block"><b>NOTE:</b> Please input your correct number. The status of your appointment booking is sent to this number.</span>
-												<input placeholder="format: 09123456789" id="cno" class="form-control" name="cnum" type="text" required pattern="[0][9][0-9]{9}" />
+												<!-- <span class="alert-warning" style="margin: 0 0 5px 0; padding:5px; display:block"><b>NOTE:</b> Please input your correct number. </span>
+												<input placeholder="format: 4163344567" id="cno" class="form-control" name="cnum" type="text" required pattern="[0][9][0-9]{9}" /> -->
 											</div>
 											<br>
 										</div>	
@@ -107,7 +107,7 @@ $i;
 									
 										<div class="col-xs-12 col-sm-12 col-md-12 columns" style="margin-top: 10px">
 											<div class="col-xs-12 col-sm-6 col-md-6 columns">
-												<label class="form-elem" for="mname">Middle name *</label>
+												<label class="form-elem" for="mname">Middle initial *</label>
 												<input id="mname" class="form-control" name="mname" type="text" required />
 											</div>
 											<div class="col-xs-12 col-sm-6 col-md-6 columns">	
@@ -117,7 +117,7 @@ $i;
 										</div>			
 										<div class="col-xs-12 columns" style="margin-top: 10px">
 											<div class="col-xs-6 columns">
-												<label class="form-elem" for="bdate">Birthdate *</label>
+												<label class="form-elem" for="bdate">D.O.B *</label>
 												<input id="bdate" class="form-control" name="bdate" type="date" required />
 											</div>
 											<div class="col-xs-6 columns">
@@ -129,7 +129,7 @@ $i;
 				                                </select>
 											</div>
 											<div class="col-xs-12 columns">	
-												<label class="form-elem" for="reason">Type of treatment to avail</label>
+												<label class="form-elem" for="reason">Type of Treatment Requested</label>
 												<input id="nreason" class="form-control" name="nreason" type="reason" />
 											</div>
 										</div>
@@ -137,8 +137,7 @@ $i;
 										<div class="col-sm-12 col-md-12 col-xs-12 columns" style="margin-top:10px">									
 											<label class="form-elem">
 												<input id="chk" type="checkbox">	
-												I confirm that the information I have supplied are authentic and I'm aware that 
-												I will receive an email and text message notification about my appointment booking.
+												I will receive an email notification about my appointment booking.
 											</label> 
 											<hr />
 											<button id="sub" type="submit" class="btn btn-success">Continue</button>
@@ -210,7 +209,7 @@ $i;
 			if($('#np').valid()){
 				if($('#av-timeslots').val()==null){
 					event.preventDefault();
-					swal('ERROR','Select a timeslot.','error');
+					swal('ERROR','Select a time.','error');
 				}else if($("#chk").prop("checked")){
 					event.preventDefault();
 					$.getJSON("<?php echo base_url();?>patient/check_username/",{username:$('#uname').val()},success=function(data){
@@ -221,12 +220,12 @@ $i;
 			        		$.getJSON("<?php echo base_url();?>patient/check_patient/",{firstname:$('#fname').val(), lastname:$('#lname').val(), middlename:$('#mname').val()},success=function(data){
 			        			if(data != '0'){
 			        				event.preventDefault();
-			        				swal('ERROR','You already have a profile','error');
+			        				swal('ERROR','Profile already exists','error');
 			        			}else{
 			        				$.getJSON("<?php echo base_url();?>appointment/check_duplicate_appointment/",{username:$('#uname').val(), date:$('#idt').val()},success=function(data){
 			        					if(data != '0'){
 			        						event.preventDefault();
-			        						swal('ERROR','You can only reserve appointment once per day.','error');
+			        						swal('ERROR','Cannot reserve appointment more than once per day.','error');
 			        					}
 			        					else{
 							        			$('#np').submit();
@@ -247,7 +246,7 @@ $i;
 			if($('#op').valid()){
 				if($('#av-timeslots').val()==null){
 					event.preventDefault();
-					swal('ERROR','Select a timeslot.','error');
+					swal('ERROR','Select a time.','error');
 				}else if($("#chck").prop("checked")){
 					event.preventDefault();
 					$.getJSON("<?php echo base_url();?>patient/check_username/",{username:$('#opatient-usrname').val()},success=function(data){

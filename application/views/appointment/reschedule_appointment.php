@@ -24,12 +24,12 @@
 							<input id="appointmentno" class="form-control" name="appointmentnumber"  placeholder="Input your appointment code" <?php if($check==1){ ?> value="<?php echo $info->appointmentno;?>" <?php } ?> required/>												      	
 						</div>
 						<div class="col-xs-6 col-lg-4 columns">
-							<label for="date"class="form-elem">Choose new date *</label>
+							<label for="date"class="form-elem">New date *</label>
 							<input class="form-control" id="close-date2" type="date"  onchange="selectdate()" name="date"  min=<?php echo date("Y-m-d",strtotime('tomorrow'));?> required />
 						</div>
 						
 						<div class="col-xs-6 col-lg-4 columns">
-							<label for="date"class="form-elem">Choose timeslot *</label>
+							<label for="date"class="form-elem">Time *</label>
 							<select id="close-sched1" class="form-control" name="time" required>
 							</select>
 						</div>
@@ -84,15 +84,15 @@
 				$.getJSON("<?php echo base_url();?>appointment/check_appointmentno/",{appointmentno:$('#appointmentno').val()},success=function(data){
 				    if(data == '0'){
 				    	event.preventDefault();
-				        swal("ERROR","Appointment number doesn't exists","error");
+				        swal("ERROR","Appointment code is incorrect.","error");
 				    }else{
 				    	event.preventDefault();
-						if($('#close-sched1').val()=="Clinic is not open during Sunday's"){
+						if($('#close-sched1').val()=="Clinic closed."){
 							event.preventDefault();
-							swal('ERROR','Not open on Sunday','error');
+							swal('ERROR','Closed on Sunday','error');
 						}
 						else{
-							if(confirm('Are you sure to reschedule your appointment?')){
+							if(confirm('Reschedule appointment?')){
 							    $('#resched').submit();
 							}
 						}

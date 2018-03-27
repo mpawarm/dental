@@ -1,7 +1,7 @@
 <?php $this->load->view('header', array('num' => 7, 'title' => 'Confirmed Appointments')); ?>
 <?php $ctr = -1;?>
 <div class="row element-container">
-    <legend>Clinic Appointments</legend>
+    <legend>Mississauga Dental Clinic Appointments</legend>
     <span id="message" style="color:red"></span>
       <div id="content" style="margin:20px">
         <div class="col-xs-12 columns large-tables"> 

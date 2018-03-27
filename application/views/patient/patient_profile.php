@@ -33,36 +33,15 @@
 	                      </div>
 						</div>
 					</div>							              	
-	              	<div class="col-xs-12">
-	              		<div class="panel panel-info">
-		                      <div class="panel-heading text-center">                           
-		                           <span>Dental Information</span>
-		                           <a href="<?php echo base_url();?>patient/view_teethprofile/<?php echo $prof->patient_id;?>">
-		                           		<button type="button" class="btn btn-primary">
-		                         			<span class="glyphicon glyphicon-file"></span> Teeth Profile
-		                           		</button>
-		                           	</a>
-		                      </div>
-		                      <div class="panel-body">
-		                            <p><strong>OCCLUSION</strong>: <?php echo $prof->occlusion;?></p>
-						  			<p><strong>Periodontal condition</strong>: <?php echo $prof->periodontalcondition;?></p>
-						  			<p><strong>Oral hygiene</strong>: <?php echo $prof->oralhygiene;?></p>
-						  			<p><strong>Previous history of bleeding</strong>: <?php echo $prof->prevhistoryofbleeding;?></p>
-							  		<p><strong>Blood pressure</strong>: <?php echo $prof->bloodpressure;?></p>
-							  		<p><strong>Denture</strong></p>
-							  			<p>Upper Since 1994</p>
-							  			<p>Lower Since 1994</p>
-		                      </div>
-	              		</div>
-	              	</div>					
+	              				
 	              	<div class="col-xs-12">
 	              		<div class="panel panel-info">
 		                      <div class="panel-heading text-center">                           
 		                           <span>Work Information</span>
 		                      </div>
 		                      <div class="panel-body">
-		                            <p><strong>Office address</strong>: <?php echo $prof->officeaddress;?></p>
-		                            <p><strong>Telephone number</strong>: <?php echo $prof->officetelno;?></p>
+		                            <p><strong>Home address</strong>: <?php echo $prof->officeaddress;?></p>
+		                            <p><strong>Mobile number</strong>: <?php echo $prof->officetelno;?></p>
 		                      </div>
 	              		</div>
 	              	</div>
@@ -78,7 +57,7 @@
 	                           <span>Remaining Balance</span>
 	                      </div>
 	                      <div class="panel-body text-center">
-	                      		<p class="text-center"><strong>PHP <?php echo Number_format($prof->total_balance);?></strong></p>
+	                      		<p class="text-center"><strong>CAD <?php echo Number_format($prof->total_balance);?></strong></p>
 	                      		<button type="button" class="btn btn-success" onclick="add_payment()">
 									<span class="glyphicon glyphicon-plus"></span> Add Payment
 								</button>
@@ -93,7 +72,7 @@
 					<div class="col-xs-12 columns">
 							<div class="panel panel-info">
 							  	<!-- Default panel contents -->
-							  	<div class="panel-heading text-center">Chronic Ailments</div>		
+							  	<div class="panel-heading text-center">Chronic Disease</div>		
 								<table id="example" class="table table-striped" cellspacing="0" width="100%">							 
 									<thead>
 										<tr>
@@ -133,33 +112,8 @@
 							        </tbody>
 							    </table>
 							</div>
-					</div>
-					<div class="col-xs-12 columns">
-							<div class="panel panel-info">
-							  	<!-- Default panel contents -->
-							  	<div class="panel-heading text-center">Allergies</div>
-								<table id="example" class="table table-striped" cellspacing="0" width="100%">
-									<thead>
-										<tr>
-											<th class="vertical-middle-align text-center">Name</th>
-											<th class="vertical-middle-align text-center">Date Added</th>
-										</tr>
-									</thead>
-							        <tbody>
-							          <?php foreach($allergies as $al):?>
-							            <tr>					                
-							            	<td class="text-center"><?php echo $al->allergyname;?></td>
-							            	<td class="text-center" class="text-center"><?php echo date("F j, Y",strtotime($al->dateadded));?></td>
-							            </tr>
-							          <?php endforeach;?>
-							        </tbody>
-							    </table>
-							</div>
-					</div>
-			</div>
-			<!-- END OF RIGHT COLUMN -->
-		</div><!--- closing div for the div with a xs-12 class -->
-
+					 </div>
+					
 		<!-- START OF MODAL FOR ADDING PAYMENT -->
 		<div class="modal fade" id="modal-add-payment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -167,13 +121,13 @@
             <form method="post" role="form" action="<?php echo base_url();?>payment/add_payment">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Add payment</h4>
+                <h4 class="modal-title">Add Dental Fee</h4>
               </div>
 
               <div class="modal-body" style="display:flex">                                                                      
 				<div class="col-xs-10 col-xs-offset-1 columns">	
 					<div class="col-xs-6 col-md-6 col-lg-6 columns">
-						<p><strong>Remaining balance</strong><br/><?php echo Number_format($prof->total_balance);?></p>
+						<p><strong>Balance Remaining</strong><br/><?php echo Number_format($prof->total_balance);?></p>
 						<input type="hidden" name="pid" value="<?php echo $prof->patient_id;?>">
 						<input type="hidden" name="totalbalance" value="<?php echo $prof->total_balance;?>">
 					</div>
@@ -181,7 +135,7 @@
 					<?php if($prof->total_balance==0){?>
 						<label for="amt-paid" style="color:red">Remaining balance is ZERO (0)</label>
 					<?php }else{?>
-	                	<label for="amt-paid">Payment amount</label>
+	                	<label for="amt-paid">Amount Paid</label>
 	                	<input id="amt-paid" class="form-control" name="amount" type="number" max="<?php echo $prof->total_balance;?>" min="1" required />
 	                <?php }?>
                 	</div>
@@ -205,7 +159,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Payment history</h4>
+                <h4 class="modal-title">Payment Profile</h4>
               </div>
 
               <div class="modal-body" style="display:flex">                                                                      
@@ -220,12 +174,12 @@
 							<th class="text-center vertical-middle-align">Paid To</th>
 						</tr>
 						<tr>
-							<td class="text-center vertical-middle-align">August 39</td>
-							<td class="text-center vertical-middle-align">1000 </td>
-							<td class="text-center vertical-middle-align">fullname of user</td>
-							<td class="text-center vertical-middle-align">fullname of user</td>
-							<td class="text-center vertical-middle-align">fullname of user</td>
-							<td class="text-center vertical-middle-align">fullname of user</td>
+							<td class="text-center vertical-middle-align">March 28</td>
+							<td class="text-center vertical-middle-align">9000 </td>
+							<td class="text-center vertical-middle-align">User Name</td>
+							<td class="text-center vertical-middle-align">User Name</td>
+							<td class="text-center vertical-middle-align">User Name</td>
+							<td class="text-center vertical-middle-align">User Name</td>
 
 						</tr>
 					</table>

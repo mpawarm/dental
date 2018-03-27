@@ -6,7 +6,7 @@
                 <a href="<?php echo base_url();?>patient/add_patient">
                     <button type="button" class="add-btn btn btn-success">
                         <span class="glyphicon glyphicon-user"></span>
-                        Create New Profile
+                        Create New User Profile
                     </button>
                 </a>
                 <div class="col-xs-12 columns">
@@ -18,10 +18,10 @@
                                 <th class="col-xs-1 text-center vertical-middle-align" width="10%">Username</th>
                                 <th class="col-xs-2 text-center vertical-middle-align" width="10%">Phone Number</th>
                                 <th class="col-xs-2 text-center vertical-middle-align" width="15%">Date Created</th>
-                                <th class="col-xs-1 text-center vertical-middle-align" width="10%">Created by</th>
+                                <th class="col-xs-1 text-center vertical-middle-align" width="10%">Modifier</th>
                                 <th class="col-xs-2 text-center vertical-middle-align" width="15%">Date Modified</th>
                                 <th class="col-xs-1 text-center vertical-middle-align" width="10%">Modified by</th>  
-                                <th class="col-xs-1 text-center vertical-middle-align" width="5%">Action</th>
+                                <th class="col-xs-1 text-center vertical-middle-align" width="5%">Action Status</th>
                             </tr>
                         </thead>
                                      

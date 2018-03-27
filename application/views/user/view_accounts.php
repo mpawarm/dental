@@ -1,10 +1,10 @@
 <?php $this->load->view('header', array('num' => 5, 'title' => 'User Accounts')); ?>
     <div class="row element-container">
-       <legend>User Accounts</legend>
+       <legend>Accounts Portal</legend>
        <a href="<?php echo base_url();?>admin/add_staff">
           <button id="add" type="button" class="add-btn btn btn-success">
             <span class="glyphicon glyphicon-user"></span>
-            Add New Account
+            Add New User
           </button>
        </a>
         <div class="col-xs-12 columns"> 
@@ -15,7 +15,7 @@
                         <th class="text-center vertical-middle-align" width="30%">Name</th>
                         <th class="text-center vertical-middle-align" width="20%">Username</th>
                         <th class="text-center vertical-middle-align" width="15%">Type</th>
-                        <th class="text-center vertical-middle-align" width="35%">Action</th>
+                        <th class="text-center vertical-middle-align" width="35%">Action Status</th>
                     </tr>
                 </thead>                 
                 <tbody>
@@ -32,13 +32,13 @@
                           ?>
                         </td>
                         <td>
-                          <a style="text-decoration:none;" href="<?php echo base_url();?>admin/reset_password/<?php echo $stf->user_id;?>" onclick="return confirm('Are you sure you want to reset the password of <?php echo $stf->username;?>?');">
+                          <a style="text-decoration:none;" href="<?php echo base_url();?>admin/reset_password/<?php echo $stf->user_id;?>" onclick="return confirm('Reset the password of <?php echo $stf->username;?>?');">
                               <button id="add" type="button" class="table-btn-users btn btn-info">
                                 <span class="glyphicon glyphicon-refresh"></span>
                                 Reset Password
                               </button>                 
                           </a>
-                          <a style="text-decoration:none;" href="<?php echo base_url();?>admin/delete_staff/<?php echo $stf->user_id;?>" onclick="return confirm('Are you sure you want to delete <?php echo $stf->username;?>?');">
+                          <a style="text-decoration:none;" href="<?php echo base_url();?>admin/delete_staff/<?php echo $stf->user_id;?>" onclick="return confirm('Delete <?php echo $stf->username;?>?');">
                               <button id="add" type="button" class="table-btn-users btn btn-danger">
                                 <span class="glyphicon glyphicon-remove"></span>
                                 Remove

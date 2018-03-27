@@ -13,8 +13,8 @@
                         <label for="dic">Dentist in Charge</label>
                         <select id="dic" class="form-control" name="dentist" required>
                                       <option value="" disabled default selected style="display:none;"></option>
-                                      <option value="Dr. Cynthia Gayatin">Dr. Cynthia Gayatin</option>
-                                      <option value="Dr. John Gayatin">Dr. John Gayatin</option>
+                                      <option value="Dr. Shalini Amlani">Dr. Shalini Amlani</option>
+                                      <option value="Dr. Nisha Power">"Dr. Nisha Power</option>
                         </select><br>
                       </div>
                       
@@ -33,11 +33,6 @@
                         <select id="type" style="width:50%; margin-right:5px;" class="form-control" name="type" required>
                                       <option value="" disabled default selected style="display:none;">Treatment Type</option>
                                       <option value="Tooth">Tooth</option>
-                                      <!-- <option value="Unit">Unit</option> -->
-                                      <option value="Post">Post</option>
-                                      <option value="Canal">Canal</option>
-                                      <option value="Arch">Arch</option>
-                                      <option value="Appliance">Appliance</option>
                                       <option value="Quadrant">Quadrant</option>
                         </select>
                         <button id="atf" style="margin-right:5px" type="button" class="btn btn-info">Add treatment</button>
